@@ -10,12 +10,12 @@ namespace GreetingKata.UnitTests
     {
         public string ReturnGreetName(string name)
         {
-            if(name == "")
+            if (name == "")
             {
                 return ("Hello, my friend.");
             }
 
-            if(name == name.ToUpper())
+            if (name == name.ToUpper())
             {
                 return ("HELLO " + name + "!");
             }
@@ -34,11 +34,30 @@ namespace GreetingKata.UnitTests
             var upperWord = false;
             var totalUpper = 0;
             var totalLower = 0;
-            
-            //determine total number of uppercase and lowercase words
+
+            List<string> namesList = new List<string>();
+
+            // Handle requirements 7 and 8
+            // Create a List
             for (int i = 0; i < strArrLength; i++)
             {
-                if (names[i] == names[i].ToUpper())
+                Console.WriteLine(names[i]);
+                // should not split names surrounded by Quotes ""Charlie, Dianne"" but just trim the qoute around it
+                if (names[i].Substring(0, 1) == "\"")
+                {
+                    namesList.Add(names[i].Trim('"'));
+                }
+                else
+                {
+                    //AddRange will return an array and we are adding that array to this namesList EG:[Charlie, Dianne]
+                    namesList.AddRange(names[i].Split(','));
+                }
+            }
+
+            //determine total number of uppercase and lowercase words
+            foreach (string name in namesList)
+            {
+                if (name == name.ToUpper())
                 {
                     totalUpper++;
                 }
@@ -48,11 +67,14 @@ namespace GreetingKata.UnitTests
                 }
             }
 
-            for (int i = 0; i < strArrLength; i++)
-            {   
 
+            string tname;
+            foreach (string name in namesList)
+            {
+                tname = name.Trim(
+                    );
                 // determine if it is uppercase word; increment appropriate word counter
-                if (names[i] == names[i].ToUpper())
+                if (tname == tname.ToUpper())
                 {
                     upperWord = true;
                     upperCount++;
@@ -62,26 +84,26 @@ namespace GreetingKata.UnitTests
                     upperWord = false;
                     lowerCount++;
                 }
-                
+
                 if (!upperWord) // Handle lower case words
                 {
                     if (lowerCount < totalLower) // not the last word
                     {
-                        output1 += ", " + names[i];
+                        output1 += ", " + tname;
                     }
                     else // last word
                     {
                         if (lowerCount == 1) // just one word
                         {
-                            output1 += ", " + names[i] + ".";
+                            output1 += ", " + tname + ".";
                         }
                         else if (lowerCount == 2) // just two words
                         {
-                            output1 += " and " + names[i] + ".";
+                            output1 += " and " + tname + ".";
                         }
                         else // more than two words - Oxford comma required
                         {
-                            output1 += ", and " + names[i] + ".";
+                            output1 += ", and " + tname + ".";
                         }
                     }
                 }
@@ -91,31 +113,31 @@ namespace GreetingKata.UnitTests
                     {
                         if (upperCount == 1)
                         {
-                            output2 += " " + names[i];
+                            output2 += " " + tname;
                         }
                         else
                         {
-                            output2 += ", " + names[i];
+                            output2 += ", " + tname;
                         }
                     }
                     else // last word
                     {
                         if (upperCount == 1)
                         {
-                            output2 += " " + names[i] + "!";
+                            output2 += " " + tname + "!";
                         }
                         else if (upperCount == 2) // more than two words - Oxford comma required
                         {
-                            output2 += " AND " + names[i] + "!";
+                            output2 += " AND " + tname + "!";
                         }
                         else // more than two words - Oxford comma required
                         {
-                            output2 += ", AND " + names[i] + "!";
+                            output2 += ", AND " + tname + "!";
                         }
                     }
                 }
-            }
 
+            }
             if (upperCount == 0)
             {
                 return output1;
@@ -124,7 +146,6 @@ namespace GreetingKata.UnitTests
             {
                 return output1 + output2;
             }
-                     
         }
     }
 }

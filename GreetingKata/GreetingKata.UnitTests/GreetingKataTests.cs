@@ -114,6 +114,31 @@ namespace GreetingKata.UnitTests
             Assert.AreEqual(actualResult, expectedResult);
         }
 
+        [Test]
+        public void GreetNameShouldSplitEmbeddedComma()
+        {
+            string[] names = new string[] { "Bob", "Charlie, Dianne" };
+            var greetName = new GreetName();
+
+            var expectedResult = greetName.ReturnGreetName(names);
+            var actualResult = "Hello, Bob, Charlie, and Dianne.";
+            Console.WriteLine(expectedResult);
+            Assert.AreEqual(actualResult, expectedResult);
+        }
+
+        [Test]
+        public void GreetNameShouldNotSplitEmbeddedCommaWithQuotes()
+        {
+            string[] names = new string[] { "Bob", "\"Charlie, Dianne\"" };
+            var greetName = new GreetName();
+
+            var expectedResult = greetName.ReturnGreetName(names);
+            var actualResult = "Hello, Bob and Charlie, Dianne.";
+            Console.WriteLine(actualResult);
+            Assert.AreEqual(actualResult, expectedResult);
+
+
+        }
 
     }
 }
