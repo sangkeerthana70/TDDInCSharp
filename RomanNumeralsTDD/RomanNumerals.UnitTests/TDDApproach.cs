@@ -7,109 +7,143 @@ using System.Threading.Tasks;
 
 namespace RomanNumerals.UnitTests
 {
+    [TestFixture]
+
     public class TDDApproach
     {
-        
+
         [Test]
         public void ReturnEmptyCharArr()
         {
-            char[] inputArr = new char[0] { };
+            string romanNumeral = "";
             var expected = 0;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
-            Console.WriteLine("In Test");
-            Assert.AreEqual(expected, actualResult);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             
+            Assert.AreEqual(expected, actualResult);
+
         }
 
         [Test]
-        public void ReturnValue1ForCapitalI()
+        public void ReturnValue1ForCapital_I()
         {
-            char[] inputArr = new char[] { 'I' };
+            string romanNumeral = "I";
             var expected = 1;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
+
         [Test]
-        public void ReturnValue10ForCapitalX()
+        public void ReturnValue5ForCapital_V()
         {
-            char[] inputArr = new char[] { 'X' };
+            string romanNumeral = "V";
+            var expected = 5;
+
+            var calculateRomanNumeral = new CalculateRomanNumeral();
+
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
+            Console.WriteLine(actualResult);
+            Assert.AreEqual(expected, actualResult);
+        }
+
+        [Test]
+        public void ReturnValue10ForCapital_X()
+        {
+            string romanNumeral = "X";
             var expected = 10;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
         [Test]
-        public void ReturnValue50ForCapitalL()
+        public void ReturnValue50ForCapital_L()
         {
-            char[] inputArr = new char[] { 'L' };
+            string romanNumeral = "L";
             var expected = 50;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
+
         [Test]
-        public void ReturnValue100ForCapitalC()
+        public void ReturnValue100ForCapital_C()
         {
-            char[] inputArr = new char[] { 'C' };
+            string romanNumeral = "C";
             var expected = 100;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
 
         [Test]
-        public void ReturnValue500ForCapitalD()
+        public void ReturnValue500ForCapital_D()
         {
-            char[] inputArr = new char[] { 'D' };
+            string romanNumeral = "D";
             var expected = 500;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
 
         [Test]
-        public void ReturnValue1000ForCapitalM()
+        public void ReturnValue1000ForCapital_M()
         {
-            char[] inputArr = new char[] { 'M' };
+            string romanNumeral = "M";
             var expected = 1000;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
 
         [Test]
-        public void ReturnTwoValuesForTwoStrings()
+        
+        public void ReturnNumericValuesForStrings_MMVI()
         {
-            char[] inputArr = new char[] { 'I', 'I' };
-            var expected = 11;
+            string romanNumeral = "MMVI";
+            var expected = 2006;
 
             var calculateRomanNumeral = new CalculateRomanNumeral();
 
-            var actualResult = calculateRomanNumeral.FindRomanNumeral(inputArr);
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
+            Console.WriteLine(actualResult);
+            Assert.AreEqual(expected, actualResult);
+        }
+
+        [Test]
+        public void ReturnNumericValuesForMultipleStrings_MCMXLIV()
+        {
+
+            string romanNumeral = "MCMXLIV";
+            var expected = 1944;
+
+            var calculateRomanNumeral = new CalculateRomanNumeral();
+
+            var actualResult = calculateRomanNumeral.FindRomanNumeral(romanNumeral);
             Console.WriteLine(actualResult);
             Assert.AreEqual(expected, actualResult);
         }
     }
 }
+
+       

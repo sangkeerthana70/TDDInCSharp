@@ -5,33 +5,47 @@ namespace RomanNumerals.UnitTests
     internal class CalculateRomanNumeral
     {
         
-        public int FindRomanNumeral(char[] inputArr)
+        public int FindRomanNumeral(string romanNumeral)
         {
             //int result = 0;
             int tempResult = 0;
-            string result = "";
+            int result = 0;
+            int currVal = 0;
+            int nextVal = 0;
+            
+            for (int i = 0; i < romanNumeral.Length; i++)
+            {
+                Console.WriteLine("loop " + i);
+                // get curr letter's numeric value
+                currVal = RomanToNumeric(romanNumeral[i]);
+                // if it is the last to one value just return currVal
+                if (i == romanNumeral.Length - 1)
+                {
+                    result += currVal;
+                }
+                else
+                {
+                    //get next letter's numeric value
+                    nextVal = RomanToNumeric(romanNumeral[i + 1]);
+                    
+                    if (currVal < nextVal)
+                    {
+                        
+                        result += (nextVal - currVal);
+                        Console.WriteLine("res from if " + result);
 
-            for (int i = 0; i < inputArr.Length; i++)
-            {
-                tempResult = RomanToNumeric(inputArr[i]);
-                result += tempResult.ToString();
-                
-                
+
+                        i++;
+                    }
+                    else
+                    {
+                        result += currVal;
+                        Console.WriteLine("Res from else " + result);
+                    }
+                }
             }
             
-            try
-            {
-                Console.WriteLine("In try block");
-                Console.WriteLine("final conversion: " + Int32.Parse(result));
-                return Int32.Parse(result);
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine("In exception block");
-                return 0;
-            }
-            
-            
+            return result;            
         }
 
         private int RomanToNumeric(char r)
@@ -40,8 +54,7 @@ namespace RomanNumerals.UnitTests
             switch (r)
             {
                 case 'I':
-                    num = 1;
-                    Console.WriteLine("Current val of i: " + 1);
+                    num = 1;              
                     break;
                 case 'V':
                     num = 5;
@@ -60,6 +73,9 @@ namespace RomanNumerals.UnitTests
                     break;
                 case 'M':
                     num = 1000;
+                    break;
+                default:
+                    num = 0;
                     break;
                 
             }
