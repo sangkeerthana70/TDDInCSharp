@@ -26,19 +26,28 @@ namespace GreetingKata.UnitTests
 
         public string ReturnGreetName(string[] names)
         {
-            var newString = "";
+            var newString = "Hello, ";
             var strArrLength = names.Length;
-            Console.WriteLine(strArrLength);
-            for (int i = 0; i < strArrLength; i++)
+            //Console.WriteLine(strArrLength);
+            if (strArrLength == 2)
             {
-                if (strArrLength == 2)
-                {
-                    newString = ("Hello, " + names[i]);
-                    i++;
-                }
-                newString += (" and " + names[i] + ".");
-               
+                return  (newString + names[0] + " and " + names[1] + ".");
             }
+
+            
+            for (int i = 0; i < strArrLength; i++)
+            {               
+                if (i == strArrLength - 1)
+                {
+                    Console.WriteLine("arr len in if statement" + (strArrLength - 1));
+                    Console.WriteLine("value of i is :" + names[i]);
+                    newString += ("and " + names[i] + ".");
+                    break;
+                }
+                newString += names[i] + ", ";
+                Console.WriteLine(newString);
+            }
+            
             return newString;
             
         }

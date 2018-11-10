@@ -60,7 +60,7 @@ namespace GreetingKata.UnitTests
         [Test]
         public void GreetNameShouldHandleMoreThanTwoNamesOfInput()
         {
-            string[] names = new string[] { "Amy", "BRIAN", "Charlotte" };
+            string[] names = new string[] { "Amy", "Brian", "Charlotte" };
             var greetName = new GreetName();
 
             var expectedResult = greetName.ReturnGreetName(names);
