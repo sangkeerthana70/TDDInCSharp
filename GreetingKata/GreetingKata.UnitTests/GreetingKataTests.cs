@@ -68,5 +68,52 @@ namespace GreetingKata.UnitTests
             Console.WriteLine(expectedResult);
             Assert.AreEqual(actualResult, expectedResult);
         }
+
+        [Test]
+        public void GreetNameShouldAllowMixingOfNormalAndShoutedNames1UpperManyLower()
+        {
+            string[] names = new string[] { "Amy", "BRIAN", "Charlotte" };
+            var greetName = new GreetName();
+
+            var expectedResult = greetName.ReturnGreetName(names);
+            var actualResult = "Hello, Amy and Charlotte. AND HELLO BRIAN!";
+            Console.WriteLine(expectedResult);
+            Assert.AreEqual(actualResult, expectedResult);
+        }
+        [Test]
+        public void GreetNameShouldAllowMixingOfNormalAndShoutedNames1Upper1Lower()
+        {
+            string[] names = new string[] { "Amy", "BRIAN"};
+            var greetName = new GreetName();
+
+            var expectedResult = greetName.ReturnGreetName(names);
+            var actualResult = "Hello, Amy. AND HELLO BRIAN!";
+            Console.WriteLine(expectedResult);
+            Assert.AreEqual(actualResult, expectedResult);
+        }
+        [Test]
+        public void GreetNameShouldAllowMixingOfNormalAndShoutedNamesManyUpper1Lower()
+        {
+            string[] names = new string[] { "Amy", "BRIAN", "CHARLOTTE" };
+            var greetName = new GreetName();
+
+            var expectedResult = greetName.ReturnGreetName(names);
+            var actualResult = "Hello, Amy. AND HELLO BRIAN AND CHARLOTTE!";
+            Console.WriteLine(expectedResult);
+            Assert.AreEqual(actualResult, expectedResult);
+        }
+        [Test]
+        public void GreetNameShouldAllowMixingOfNormalAndShoutedNamesManyUpperManyLower()
+        {
+            string[] names = new string[] { "Amy","BRIAN", "Keith","CHARLOTTE" };
+            var greetName = new GreetName();
+
+            var expectedResult = greetName.ReturnGreetName(names);
+            var actualResult = "Hello, Amy and Keith. AND HELLO BRIAN AND CHARLOTTE!";
+            Console.WriteLine(expectedResult);
+            Assert.AreEqual(actualResult, expectedResult);
+        }
+
+
     }
 }
