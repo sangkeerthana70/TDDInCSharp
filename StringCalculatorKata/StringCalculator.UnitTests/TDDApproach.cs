@@ -98,7 +98,7 @@ namespace StringCalculator.UnitTests
             var actualResult = addString.Add(inputString);
 
             Console.WriteLine(actualResult);
-            Assert.AreEqual(actualResult, expectedResult);
+            Assert.Fail();
 
         }
 
