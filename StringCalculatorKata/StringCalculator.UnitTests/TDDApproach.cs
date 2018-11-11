@@ -94,11 +94,7 @@ namespace StringCalculator.UnitTests
             string inputString = "1, -1, 0";
 
             var addString = new AddString();
-            var expectedResult = "negatives not allowed";
-            var actualResult = addString.Add(inputString);
-
-            Console.WriteLine(actualResult);
-            Assert.Fail();
+            Assert.Throws<System.ArgumentException>(() => addString.Add(inputString)); 
 
         }
 
