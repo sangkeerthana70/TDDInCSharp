@@ -24,7 +24,8 @@ namespace StringCalculator.UnitTests
             {
                 return Int32.Parse(numbers);
             }
-
+            // Requirement to support different delimiter
+            //if first two element values in string are equal to "//" and take the third value ";" as delimiter
             if (numbers.Substring(0, 2) == "//")
             {
                 delimiter = Convert.ToChar(numbers.Substring(2, 1));
@@ -33,7 +34,7 @@ namespace StringCalculator.UnitTests
                 numbers = numbers.Substring(4);
             }
 
-
+            // split numbers string and add to a list
             var strArr = numbers.Split(delimiter);
             List<string> strList = new List<string>();
 
@@ -41,6 +42,7 @@ namespace StringCalculator.UnitTests
             {
                 //Console.WriteLine("After slicing 4 chars: " + strArr[i]);
                 
+                // split again with newline as delimiter that again returns an array
                 strList.AddRange(strArr[i].Split('\n'));
 
                 
@@ -55,7 +57,7 @@ namespace StringCalculator.UnitTests
                     Console.WriteLine("Negative value " + negativeNumber);
                 }
                 Console.WriteLine("num = " + num);
-                sum += Int32.Parse(num.Trim());
+                sum += Int32.Parse(num.Trim());// eliminate spaces after commas in strList
                 Console.WriteLine("Sum = " + sum);
             }
             if (negativeValues)
