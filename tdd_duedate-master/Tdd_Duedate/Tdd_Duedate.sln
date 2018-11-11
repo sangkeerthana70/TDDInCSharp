@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillDueDateUnitTest1.cs", "BillDueDateUnitTest1.cs\BillDueDateUnitTest1.cs.csproj", "{7AE5D1CF-5019-4B6E-8202-FCC242947A3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentDateCheck", "PaymentDateCheck\PaymentDateCheck.csproj", "{790BFD8C-DA8C-413B-B79D-40D0FF57C7AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AE5D1CF-5019-4B6E-8202-FCC242947A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE5D1CF-5019-4B6E-8202-FCC242947A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE5D1CF-5019-4B6E-8202-FCC242947A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE5D1CF-5019-4B6E-8202-FCC242947A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{790BFD8C-DA8C-413B-B79D-40D0FF57C7AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790BFD8C-DA8C-413B-B79D-40D0FF57C7AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790BFD8C-DA8C-413B-B79D-40D0FF57C7AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790BFD8C-DA8C-413B-B79D-40D0FF57C7AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3F672E7-F7C6-4A24-B6BA-4EA5AC7A22E2}
+	EndGlobalSection
+EndGlobal
