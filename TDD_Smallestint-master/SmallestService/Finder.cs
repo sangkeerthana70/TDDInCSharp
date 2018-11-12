@@ -5,6 +5,7 @@ namespace SmallestService
 {
     public class Finder
     {
+        // FindSmallestInt method to tackle UnitTest1.cs test cases
         public int FindSmallestInt(int[] input)
         {
             int result = int.MaxValue;
@@ -25,6 +26,7 @@ namespace SmallestService
             return result;            
         }
 
+        // FindClosestIntToZero to tackle UnitTest2.cs
         public int FindClosestIntToZero(int[] input)
         {
             var result = int.MaxValue;
