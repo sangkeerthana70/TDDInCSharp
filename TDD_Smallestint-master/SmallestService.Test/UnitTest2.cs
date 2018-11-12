@@ -25,7 +25,7 @@ namespace SmallestService.Test
             var expected = 1;
             var actual = finder.FindClosestIntToZero(input);
             Console.WriteLine("Output: " + actual);
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -37,7 +37,43 @@ namespace SmallestService.Test
             var expected = 2;
             var actual = finder.FindClosestIntToZero(input);
             Console.WriteLine("Output: " + actual);
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void IfInputLengthIsThreeReturnsClosestToZero()
+        {
+            var finder = new Finder();
+            var input = new int[3] { 0, 2, 1 };
+
+            var expected = 0;
+            var actual = finder.FindClosestIntToZero(input);
+            Console.WriteLine("Output: " + actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void IfInputContainsNegativeNumberReturnClosestToZero()
+        {
+            var finder = new Finder();
+            var input = new int[3] { 3, -5, -1 };
+
+            var expected = -1;
+            var actual = finder.FindClosestIntToZero(input);
+            Console.WriteLine("Output: " + actual);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void IfInputContainsNegativeNumberAndPostiveNumberBothAreSameClosestToZeroReturnNegativeNumber()
+        {
+            var finder = new Finder();
+            var input = new int[3] { 5, 7, -5 };
+
+            var expected = -5;
+            var actual = finder.FindClosestIntToZero(input);
+            Console.WriteLine("Output: " + actual);
+            Assert.AreEqual(expected, actual);
 
         }
     }

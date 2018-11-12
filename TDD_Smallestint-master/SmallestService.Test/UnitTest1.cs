@@ -25,7 +25,7 @@ namespace Tests
             var expected = 7;
             var actual = finder.FindSmallestInt(input);
             Console.WriteLine("Actual output: " + actual);
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -37,7 +37,7 @@ namespace Tests
             var expected = 0;
             var actual = finder.FindSmallestInt(input);
             Console.WriteLine("Output: " + actual);
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
 
         }
 
@@ -50,7 +50,7 @@ namespace Tests
             var expected = 2;
             var actual = finder.FindSmallestInt(input);
             Console.WriteLine("Output: " + actual);
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -62,7 +62,7 @@ namespace Tests
             var expected = -1;
             var actual = finder.FindSmallestInt(input);
             Console.WriteLine("Output: " + actual);
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
      
     }
