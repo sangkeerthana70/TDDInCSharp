@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 
 namespace CompareStrings.UnitTests
 {
-    public class Class1
+    [TestFixture]// Nunit will understand that this class will have all the unit tests
+    public class CompareStringUnitTests
     {
+        [Test]// identify this method as a Nunit test
+
+        // have descrriptive names for the test method
+        public void CompareLengthOfTwoStringsToBeSame()
+        {
+            string a = "this";
+            string b = "that";
+
+            var expectedResult = 4;
+            var compareStrings = new CompareStrings();
+
+
+        }
     }
 }
