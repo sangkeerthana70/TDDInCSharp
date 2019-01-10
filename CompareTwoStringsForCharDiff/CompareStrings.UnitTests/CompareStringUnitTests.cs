@@ -10,12 +10,16 @@ namespace CompareStrings.UnitTests
         // have descrriptive names for the test method
         public void CompareLengthOfTwoStringsToBeSame()
         {
+            //Arrange
             string a = "this";
             string b = "that";
 
             var expectedResult = 4;
-            var compareStrings = new CompareStrings();
+            var compareStrings = new CompareTwoStrings();
 
+            //
+            int actualResult = compareStrings.CheckLengthOfTwoStrings(a , b);
+            Assert.AreEqual(expectedResult, actualResult);
 
         }
     }
