@@ -25,6 +25,42 @@ namespace CompareStrings
             }
             return strLength;
         }
+
+        public int[] FindDifferenceBetweenTwoStrings(string a, string b, int len)
+        {
+            int[] arr = new int[len];
+            int difference;
+            int totChangeScore = 0;
+            for (int i = 0; i < len; i++)
+            {               
+                if (a[i] == b[i])
+                {
+                    difference = 0;
+                    arr[i] = difference;
+
+                }
+                else
+                {
+                    int castCharOfa = (int)a[i];
+                    
+                    int castCharOfb = (int)b[i];
+                    
+                    difference = castCharOfb - castCharOfa;
+                    
+                    totChangeScore += difference;
+                    arr[i] = difference;
+
+                }
+            }
+            //foreach(int item in arr)
+            //{
+            //    Console.Write(item + " ");
+            //}
+            
+            Console.WriteLine(string.Join(" ", arr));
+            return arr;
+
+        }
         
     }
 }

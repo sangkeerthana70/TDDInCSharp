@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System;
 
 namespace CompareStrings.UnitTests
 {
@@ -17,10 +18,30 @@ namespace CompareStrings.UnitTests
             var expectedResult = 4;
             var compareStrings = new CompareTwoStrings();
 
-            //
+            // Assert
             int actualResult = compareStrings.CheckLengthOfTwoStrings(a , b);
             Assert.AreEqual(expectedResult, actualResult);
 
         }
+
+        [Test]
+        public void CompareStringsReturnsArrayValuesZeroZeroMinusEightAndOne()
+        {
+            string a = "this";
+            string b = "that";
+            int length = 4;
+
+            int [] expectedResult = { 0, 0 , - 8, 1 };
+            var compareStrings = new CompareTwoStrings();
+
+            // Assert 
+            Console.WriteLine("expected result " + expectedResult);
+            var actualResult = compareStrings.FindDifferenceBetweenTwoStrings(a, b, length);
+            Console.WriteLine("actual result " + actualResult);
+            Assert.AreEqual(expectedResult, actualResult);
+
+        }
+
+
     }
 }
