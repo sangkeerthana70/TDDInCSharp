@@ -37,10 +37,37 @@ namespace CompareStrings.UnitTests
             // Assert 
             Console.WriteLine("expected result " + expectedResult);
             var actualResult = compareStrings.FindDifferenceBetweenTwoStrings(a, b, length);
-            Console.WriteLine("actual result " + actualResult);
+            foreach (var item in actualResult)
+            {
+                Console.WriteLine("actual result " + actualResult);
+            }
             Assert.AreEqual(expectedResult, actualResult);
 
         }
+
+        [Test]
+        public void CompareStringsReturnsArrayValuesMinusThirteenMinusThreeMinusEightMinusOne()
+        {
+            string a = "this";
+            string b = "bear";
+            int length = 4;
+
+            int[] expectedResult = { -18, -3, -8, -1 };
+            var compareStrings = new CompareTwoStrings();
+
+            // Assert 
+            Console.WriteLine("expected result " + expectedResult);
+            var actualResult = compareStrings.FindDifferenceBetweenTwoStrings(a, b, length);
+
+            foreach(var item in actualResult)
+            {
+                Console.WriteLine("actual result " + actualResult);
+            }
+                
+            Assert.AreEqual(expectedResult, actualResult);
+
+        }
+
 
 
     }
