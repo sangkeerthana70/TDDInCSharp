@@ -35,12 +35,13 @@ namespace CompareStrings.UnitTests
             var compareStrings = new CompareTwoStrings();
 
             // Assert 
-            Console.WriteLine("expected result " + expectedResult);
+            // string.Join() method Concatenates the elements of a specified array or the members of a collection,
+            // using the specified separator between each element or member.
+            Console.WriteLine("expected result " + string.Join(" ", expectedResult));
             var actualResult = compareStrings.FindDifferenceBetweenTwoStrings(a, b, length);
-            foreach (var item in actualResult)
-            {
-                Console.WriteLine("actual result " + actualResult);
-            }
+            
+            Console.WriteLine("actual result " + string.Join(" " ,actualResult));
+            
             Assert.AreEqual(expectedResult, actualResult);
 
         }
@@ -56,14 +57,31 @@ namespace CompareStrings.UnitTests
             var compareStrings = new CompareTwoStrings();
 
             // Assert 
-            Console.WriteLine("expected result " + expectedResult);
+            Console.WriteLine("expected result " + string.Join(" ",expectedResult));
             var actualResult = compareStrings.FindDifferenceBetweenTwoStrings(a, b, length);
+            Console.WriteLine("actualResult " + string.Join(" ", actualResult));
 
-            foreach(var item in actualResult)
-            {
-                Console.WriteLine("actual result " + actualResult);
-            }
                 
+            Assert.AreEqual(expectedResult, actualResult);
+
+        }
+        [Test]
+        public void CompareStringsReturnsArrayValuesThirteenThreeEightOne()
+        {
+            
+            string a = "bear";
+            string b = "this";
+            int length = 4;
+
+            int[] expectedResult = { 18, 3, 8, 1 };
+            var compareStrings = new CompareTwoStrings();
+
+            // Assert 
+            Console.WriteLine("expected result " + string.Join(" ", expectedResult));
+            var actualResult = compareStrings.FindDifferenceBetweenTwoStrings(a, b, length);
+            Console.WriteLine("actualResult " + string.Join(" ", actualResult));
+
+
             Assert.AreEqual(expectedResult, actualResult);
 
         }

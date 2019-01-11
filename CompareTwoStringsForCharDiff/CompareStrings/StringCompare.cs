@@ -52,12 +52,7 @@ namespace CompareStrings
 
                 }
             }
-            //foreach(int item in arr)
-            //{
-            //    Console.Write(item + " ");
-            //}
-            
-            Console.WriteLine(string.Join(" ", arr));
+            //Console.WriteLine(string.Join(" ", arr));
             return arr;
 
         }
