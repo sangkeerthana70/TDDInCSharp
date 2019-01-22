@@ -7,4 +7,5 @@ namespace Mastermind.Service
 
         public int CorrectPositions;
     }
+
 }
