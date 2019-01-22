@@ -1,5 +1,5 @@
-using NUnit.Framework;
 using Mastermind.Service;
+using NUnit.Framework;
 
 namespace Tests
 {
