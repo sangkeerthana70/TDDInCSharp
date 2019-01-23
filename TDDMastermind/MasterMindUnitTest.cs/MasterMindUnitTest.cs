@@ -52,7 +52,19 @@ namespace Tests
 
         }
 
-        
+        [Test]
+        public void IfGameIsWon_ReturnGameStatusIsWonTrue()
+        {
+            game.code = new int[] { 1, 2, 3, 4 };
+            var input = new int[] { 1234, 2341, 3412, 3421, 2314, 1324 };//attempt
+            game.CheckScore(input);
+
+            System.Console.WriteLine("actual: " + game._gameStatus.GameIsWon);
+            Assert.AreEqual(true, game._gameStatus.GameIsWon);
+
+        }
+
+
     }
 }
 

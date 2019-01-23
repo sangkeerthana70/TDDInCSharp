@@ -53,9 +53,42 @@ namespace Mastermind.Service
             return true;
 
         }
-        
 
-        
+        public int[] CalculateScore(int[] gameCode, int input)
+        {
+            int[] result = new int[2];
+            int CorrectNumbers = 0;
+            int CorrectPositions = 0;
+            //convert the input variable to a string
+            string s = input.ToString();
+
+            int currNum;
+            for (var i = 0; i < s.Length; i++)
+            {
+                currNum = Convert.ToInt32(s[i]) - 48;// 48 represents ascii of 0               
+                for (var j = 0; j < gameCode.Length; j++)
+                {
+                    if (currNum == gameCode[j])
+                    {
+                        CorrectNumbers += 1;
+                        // check position of both numbers
+                        if (i == j)
+                        {
+                            CorrectPositions += 1;
+                        }
+                        break;
+                    }
+                }
+                result[0] = CorrectNumbers;
+                result[1] = CorrectPositions;
+            }
+            Console.WriteLine(string.Join(" ", CorrectNumbers, CorrectPositions));
+            return result;
+        }
+
+
+
+
 
     }
 }
