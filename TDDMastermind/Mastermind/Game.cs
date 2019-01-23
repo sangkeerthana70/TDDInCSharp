@@ -50,7 +50,26 @@ namespace Mastermind.Service
             {
                 return false;
             }
-            return true;
+            //return true;
+            // loop through test case IfGameIsWon_ReturnGameStatusIsWonTrue()
+            for (var i = 0; i < attempt.Length; i++)
+            {
+                var result = CalculateScore(code, attempt[i]);
+
+                // returns Correct Numbers and correct positions for the attempt array
+                _gameStatus.CorrectNumbers = result[0];
+                _gameStatus.CorrectPositions = result[1];
+                if ((_gameStatus.CorrectNumbers == 4) && (_gameStatus.CorrectPositions == 4))
+                {
+                    _gameStatus.GameIsWon = true;
+                    break;
+                }
+                else
+                {
+                    _gameStatus.GameIsWon = false;
+                }
+            }
+            return _gameStatus.GameIsWon;
 
         }
 
