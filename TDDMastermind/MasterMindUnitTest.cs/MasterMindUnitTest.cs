@@ -76,6 +76,16 @@ namespace Tests
 
         }
 
+        [Test]
+        public void If2NumbersAreInCorrectPosition_ReturnGameStatusCorrectPositionsIs2()
+        {
+            game.code = new int[] { 1, 2, 3, 4 };
+            var input = new int[] { 5134 };//attempt
+            game.CheckScore(input);
+            System.Console.WriteLine("actual : " + game._gameStatus.CorrectPositions);
+            //Assert.AreEqual(false, game._gameStatus.GameIsWon);
+            Assert.AreEqual(2, game._gameStatus.CorrectPositions);
+        }
 
     }
 }
