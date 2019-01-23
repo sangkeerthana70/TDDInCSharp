@@ -87,6 +87,17 @@ namespace Tests
             Assert.AreEqual(2, game._gameStatus.CorrectPositions);
         }
 
+        /*
+        [Test]
+        public void CorrectNumbersShouldIgnoreCorrectPositions()
+        {
+            game.code = new int[] { 1, 2, 3, 4 };
+            var input = new int[] { 2134 };//attempt
+            game.CheckScore(input);
+            Assert.AreEqual((4, 0), game._gameStatus.CorrectNumbers, game._gameStatus.CorrectPositions);
+        }
+        */
+
     }
 }
 
