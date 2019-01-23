@@ -64,6 +64,18 @@ namespace Tests
 
         }
 
+        [Test]
+        public void If3NumbersAreCorrect_ReturnGameStatusCorrectNumsIs3()
+        {
+            game.code = new int[] { 1, 2, 3, 4 };
+            var input = new int[] { 5341 };//attempt
+            game.CheckScore(input);
+            System.Console.WriteLine("actual : " + game._gameStatus.CorrectNumbers);
+            //Assert.AreEqual(false, game._gameStatus.GameIsWon);
+            Assert.AreEqual(3, game._gameStatus.CorrectNumbers);
+
+        }
+
 
     }
 }

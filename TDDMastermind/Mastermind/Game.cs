@@ -84,9 +84,11 @@ namespace Mastermind.Service
             int currNum;
             for (var i = 0; i < s.Length; i++)
             {
-                currNum = Convert.ToInt32(s[i]) - 48;// 48 represents ascii of 0               
+                currNum = Convert.ToInt32(s[i]) - 48;// 48 represents ascii of 0    
+                Console.WriteLine("Curr num : " + currNum);
                 for (var j = 0; j < gameCode.Length; j++)
                 {
+                    Console.WriteLine("gameCode[j] : " + gameCode[j]);
                     if (currNum == gameCode[j])
                     {
                         CorrectNumbers += 1;
