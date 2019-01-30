@@ -6,17 +6,34 @@ using System.Threading.Tasks;
 
 namespace TrainTicketPricerServices
 {
+    // helper class Dependency-2
     public class HolidayChecker
     {
-        DateTime date;
-        public HolidayChecker(DateTime d)
+        DateTime d;
+
+        public HolidayChecker()
         {
-            this.date = d;
         }
 
-        public bool IsHoliday(DateTime date)
+        public HolidayChecker(DateTime date)
         {
+            this.d = date;
+        }
+
+        public bool IsHoliday(DateTime d)
+        {
+            Console.WriteLine("     " + d.DayOfWeek);
+            Console.WriteLine("     " + d.DayOfWeek.ToString().Equals("Saturday"));
+            Console.WriteLine("     " + d.DayOfWeek.ToString().Equals("Sunday"));
+
+
+            if ((d.DayOfWeek.ToString().Equals("Saturday") || (d.DayOfWeek.ToString().Equals("Sunday"))))
+            {
+                return true;
+            }
+
             return false;
+
         }
     }
 }
