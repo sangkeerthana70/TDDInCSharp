@@ -22,16 +22,22 @@ namespace TrainTicketPricerServices
 
         public int CalculatePrice(int board, int destination, int age, DateTime d)
         {
-                int numOfStops = destination - board;
-                Console.WriteLine(numOfStops);
-                if (numOfStops < 0)
-                {
-                    throw new System.ArgumentException("Number of stops cannot be negative");
-
-                }
-                return numOfStops;
+            int numOfStops = destination - board;
+            int ticketPrice = 0;
             
+            Console.WriteLine("numOfStops: " + numOfStops);
+            if (numOfStops < 0)
+            {
+                throw new System.ArgumentException("Number of stops cannot be negative");
 
+            }
+
+            if((numOfStops == 5) && (!(_holidayChecker.IsHoliday(d))) &&  (_passengerType.CalculatePassengerType(age) == "Adult"))
+            {
+
+                ticketPrice = 5;
+            }
+            return ticketPrice;    
         }
 
     }

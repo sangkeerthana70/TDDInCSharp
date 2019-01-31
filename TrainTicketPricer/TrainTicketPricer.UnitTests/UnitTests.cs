@@ -24,5 +24,17 @@ namespace TrainTicketPricer.UnitTests
             
             Assert.Throws<System.ArgumentException>(() => ttp.CalculatePrice(board, destination, age, date));
         }
+
+        [Test]
+        public void TicketPriceShouldReturnFiveForFiveStationsForAdultOnNonHoliday()
+        {
+            var board = 1;
+            var destination = 6;
+            DateTime date = new DateTime();
+            int age = 42;
+            var expected = 5;
+            var actual = ttp.CalculatePrice(board, destination, age, date);
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
