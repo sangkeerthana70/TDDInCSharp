@@ -20,10 +20,13 @@ namespace TrainTicketPricerServices
 
        
 
-        public int CalculatePrice(int board, int destination, int age, DateTime d)
+        public float CalculatePrice(int board, int destination, int age, DateTime d)
         {
             int numOfStops = destination - board;
-            int ticketPrice = 0;
+            float ticketPrice = 0;
+            
+            float price = 0;
+            
             
             Console.WriteLine("numOfStops: " + numOfStops);
             if (numOfStops < 0)
@@ -35,7 +38,16 @@ namespace TrainTicketPricerServices
             if((numOfStops == 5) && (!(_holidayChecker.IsHoliday(d))) &&  (_passengerType.CalculatePassengerType(age) == "Adult"))
             {
 
-                ticketPrice = 5;
+                ticketPrice = numOfStops * 5;
+            }
+
+            if((numOfStops == 5) && (_holidayChecker.IsHoliday(d)) && (_passengerType.CalculatePassengerType(age) == "Adult"))
+            {
+                price = (numOfStops * 5);
+                ticketPrice = (price * float.Parse("0.8"));
+                Console.WriteLine("ticketPrice : " + ticketPrice);
+
+                
             }
             return ticketPrice;    
         }

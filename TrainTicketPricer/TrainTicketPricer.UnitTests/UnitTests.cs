@@ -26,15 +26,31 @@ namespace TrainTicketPricer.UnitTests
         }
 
         [Test]
-        public void TicketPriceShouldReturnFiveForFiveStationsForAdultOnNonHoliday()
+        public void TicketPriceForFiveStationsForAdultsOnNonHolidayShouldReturn25()
         {
             var board = 1;
             var destination = 6;
             DateTime date = new DateTime();
             int age = 42;
-            var expected = 5;
+            var expected = 25;
             var actual = ttp.CalculatePrice(board, destination, age, date);
+            Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void TicketPriceForFiveStationsForAdultsOnHolidayShouldDiscount20PercentOffRegularPrice()
+        {
+            var board = 1;
+            var destination = 6;
+            DateTime date = new DateTime(2019, 2, 2);
+            int age = 62;
+            var expected = 20;
+            var actual = ttp.CalculatePrice(board, destination, age, date);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+
         }
     }
 }
