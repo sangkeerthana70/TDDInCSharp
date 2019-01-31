@@ -10,18 +10,6 @@ namespace TrainTicketPricerServices
     public class PassengerType
     {       
         
-        public int ageOfPassenger;
-
-        public PassengerType()
-        {
-        }
-
-        public PassengerType(int a)
-        {
-            
-            this.ageOfPassenger = a;
-        }
-
         public string CalculatePassengerType(int age)
         {
             string passengerType;

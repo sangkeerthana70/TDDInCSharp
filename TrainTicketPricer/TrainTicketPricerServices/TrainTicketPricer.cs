@@ -9,41 +9,29 @@ namespace TrainTicketPricerServices
     // main class 
     public class TicketPricer
     {
-        public int totalFee;
-        public int numOfStops;
-        public int boardStation;
-        public int destinationStation;
-        public int ageOfPassenger;
-        DateTime dayOfTravel;
-        PassengerType pt;
-        HolidayChecker hc;
-
-        public TicketPricer()
-        {
-
-        }
+        PassengerType _passengerType;
+        HolidayChecker _holidayChecker;
 
         public TicketPricer(PassengerType passengerType, HolidayChecker holidayChecker)
         {
-            this.pt = passengerType;
-            this.hc = holidayChecker;
+            this._passengerType = passengerType;
+            this._holidayChecker = holidayChecker;
         }
 
-        public int CheckNumberOfStops(int boardStation, int destinationStation)
-        {
-            int numOfStops = destinationStation - boardStation;
-            Console.WriteLine(numOfStops);
-            if(numOfStops < 0)
-            {
-                throw new System.ArgumentException("Number of stops cannot be negative");
+       
 
-            }
-            return numOfStops;
-        }
-
-        public int CalculatePrice(int age, DateTime d)
+        public int CalculatePrice(int board, int destination, int age, DateTime d)
         {
-            return 0;
+                int numOfStops = destination - board;
+                Console.WriteLine(numOfStops);
+                if (numOfStops < 0)
+                {
+                    throw new System.ArgumentException("Number of stops cannot be negative");
+
+                }
+                return numOfStops;
+            
+
         }
 
     }

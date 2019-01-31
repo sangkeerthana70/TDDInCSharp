@@ -17,12 +17,12 @@ namespace TrainTicketPricer.UnitTests
         public void TestShouldThrowExceptionIfNumberOfStopsIsANegativeValue()
         {
             //throw new NotImplementedException("Test to be Implemented");
-            var sStop = 5;
-            var dStop = 1;
-            var expected = "Number of stops cannot be negative";
-            //var actual = ttp.CheckNumberOfStops(sStop, dStop);
-            //Console.WriteLine("actual: " + actual);
-            Assert.Throws<System.ArgumentException>(() => ttp.CheckNumberOfStops(sStop, dStop));
+            var board = 5;
+            var destination = 1;
+            DateTime date = new DateTime();
+            int age = 0;
+            
+            Assert.Throws<System.ArgumentException>(() => ttp.CalculatePrice(board, destination, age, date));
         }
     }
 }

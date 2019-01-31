@@ -9,16 +9,6 @@ namespace TrainTicketPricerServices
     // helper class Dependency-2
     public class HolidayChecker
     {
-        DateTime d;
-
-        public HolidayChecker()
-        {
-        }
-
-        public HolidayChecker(DateTime date)
-        {
-            this.d = date;
-        }
 
         public bool IsHoliday(DateTime d)
         {
