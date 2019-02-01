@@ -17,13 +17,13 @@ namespace TrainTicketPricerServices
             {
                 passengerType = "Child";
             }
-            else if(age > 13 || age <= 65)
+            else if(age > 13 && age <= 65)
             {
                 passengerType = "Adult";
             }
             else
             {
-                passengerType = "Senior Citizen";
+                passengerType = "Senior";
             }
             return passengerType;
         }

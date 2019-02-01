@@ -12,9 +12,9 @@ namespace TrainTicketPricerServices
 
         public bool IsHoliday(DateTime d)
         {
-            Console.WriteLine("     " + d.DayOfWeek);
-            Console.WriteLine("     " + d.DayOfWeek.ToString().Equals("Saturday"));
-            Console.WriteLine("     " + d.DayOfWeek.ToString().Equals("Sunday"));
+            //Console.WriteLine("     " + d.DayOfWeek);
+            //Console.WriteLine("     " + d.DayOfWeek.ToString().Equals("Saturday"));
+            //Console.WriteLine("     " + d.DayOfWeek.ToString().Equals("Sunday"));
 
 
             if ((d.DayOfWeek.ToString().Equals("Saturday") || (d.DayOfWeek.ToString().Equals("Sunday"))))

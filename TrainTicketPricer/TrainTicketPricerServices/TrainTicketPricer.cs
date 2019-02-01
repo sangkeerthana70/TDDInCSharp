@@ -20,15 +20,15 @@ namespace TrainTicketPricerServices
 
        
 
-        public float CalculatePrice(int board, int destination, int age, DateTime d)
+        public int CalculatePrice(int board, int destination, int age, DateTime d)
         {
             int numOfStops = destination - board;
-            float ticketPrice = 0;
+            int ticketPrice = 0;
             
-            float price = 0;
+            int price = 0;
             
             
-            Console.WriteLine("numOfStops: " + numOfStops);
+            
             if (numOfStops < 0)
             {
                 throw new System.ArgumentException("Number of stops cannot be negative");
@@ -37,18 +37,45 @@ namespace TrainTicketPricerServices
 
             if((numOfStops == 5) && (!(_holidayChecker.IsHoliday(d))) &&  (_passengerType.CalculatePassengerType(age) == "Adult"))
             {
-
+                Console.WriteLine("numOfStops: " + numOfStops);
                 ticketPrice = numOfStops * 5;
             }
 
             if((numOfStops == 5) && (_holidayChecker.IsHoliday(d)) && (_passengerType.CalculatePassengerType(age) == "Adult"))
             {
+                Console.WriteLine("numOfStops: " + numOfStops);
                 price = (numOfStops * 5);
-                ticketPrice = (price * float.Parse("0.8"));
+                //convert float to int
+                ticketPrice = Convert.ToInt32((price * float.Parse("0.8")));
+                
                 Console.WriteLine("ticketPrice : " + ticketPrice);
 
                 
             }
+            //Console.WriteLine(numOfStops == 6);
+            //Console.WriteLine(!(_holidayChecker.IsHoliday(d)));
+            //Console.WriteLine(_passengerType.CalculatePassengerType(age));
+            if ((numOfStops == 6) && (!(_holidayChecker.IsHoliday(d))) && (_passengerType.CalculatePassengerType(age) == "Senior"))
+            {
+                
+                Console.WriteLine("In Senior pricing Non holiday");
+                ticketPrice = numOfStops * 4;
+            }
+
+            Console.WriteLine("1. " + (numOfStops == 7));
+            Console.WriteLine("2. " + (_holidayChecker.IsHoliday(d)));
+            Console.WriteLine("3. " +( _passengerType.CalculatePassengerType(age)));
+
+            if ((numOfStops == 7) && ((_holidayChecker.IsHoliday(d))) && (_passengerType.CalculatePassengerType(age) == "Senior"))
+            {
+                Console.WriteLine("In Holiday Senior pricing");
+                price = numOfStops * 4;
+                // deduct 20% discount from regualr ticket price 
+                ticketPrice = Convert.ToInt32((price * (float.Parse("0.8"))));// convert float value of 0.8 to an int
+              
+                Console.WriteLine("ticketprice : " + ticketPrice);
+            }
+
             return ticketPrice;    
         }
 

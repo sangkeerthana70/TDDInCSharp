@@ -49,7 +49,35 @@ namespace TrainTicketPricer.UnitTests
             var actual = ttp.CalculatePrice(board, destination, age, date);
             Console.WriteLine("actual: " + actual);
             Assert.AreEqual(expected, actual);
+        }
 
+        [Test]
+        public void TicketPriceForSixStationsForSeniorsOnNonHolidayShouldReturn24()
+        {
+            var board = 1;
+            var destination = 7;
+            DateTime date = new DateTime(2019, 1, 31);
+            Console.WriteLine(date);
+            int age = 70;
+            var expected = 24;
+            var actual = ttp.CalculatePrice(board, destination, age, date);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [Test]
+        public void TicketPriceForSevenStationsForSeniorsOnHolidaysShouldReturn22()
+        {
+            var board = 1;
+            var destination = 8;
+            DateTime date = new DateTime(2019, 2, 3);
+            Console.WriteLine(date);
+            int age = 75;
+            var expected = 22;
+            var actual = ttp.CalculatePrice(board, destination, age, date);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
 
         }
     }
