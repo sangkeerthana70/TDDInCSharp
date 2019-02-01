@@ -55,5 +55,19 @@ namespace StringCalculatorUnitTests
             Assert.AreEqual(expected, actual);
 
         }
+
+        [Test]
+        public void InputShouldAllowNewLineAsDelimiterWithCommasToReturnSum()
+        {
+            var input = "1\n2,3";
+            var expected = 6;
+            var actual = StringCalculator.Add(input);
+            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
+
+
+
+
+        }
     }
 }
