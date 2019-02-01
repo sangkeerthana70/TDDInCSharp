@@ -30,13 +30,14 @@ namespace StringCalculator.UnitTests
             {
                 delimiter = Convert.ToChar(numbers.Substring(2, 1));
                 Console.WriteLine("Delimiter : " + delimiter);
-                // slice first four chars in "//;\n1;2"
+                // slice first four chars in "//;\n1;2\n3"
                 numbers = numbers.Substring(4);
             }
 
             // split numbers string and add to a list
             var strArr = numbers.Split(delimiter);
             List<string> strList = new List<string>();
+			[1,2\n3]
 
             for (int i = 0; i < strArr.Length; i++)
             {
@@ -48,6 +49,7 @@ namespace StringCalculator.UnitTests
                 
             }
 
+			// strList = [-1,2,3]
             foreach(string num in strList)
             {
                 if (Int32.Parse(num) < 0)

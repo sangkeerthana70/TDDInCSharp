@@ -13,6 +13,9 @@ namespace StringCalculatorService
         {
             int sum = 0;
             char delimiter = ',';
+            bool negativeNumberFound = false;
+            string negativeValue = "";
+
             if (numbers == "")
             {
                 return sum;
@@ -32,23 +35,45 @@ namespace StringCalculatorService
                     //change the delimiter from ',' set above to ';' 
                     delimiter = Convert.ToChar(numbers.Substring(2, 1));
                     Console.WriteLine("Delimiter : " + delimiter);
-                    // slice first four chars in "//;\n1;2\n3"
-                    numbers = numbers.Substring(4);
+                    // slice first four chars in "//;\n1;2\n3" to get "2\n3"
+                    numbers = numbers.Substring(4);// will give "1;2\n3"
                 }
                 Console.WriteLine();
-                string[] val = numbers.Split(delimiter);
+
+                string[] val = numbers.Split(delimiter);// will give [2,3]
                 List<string> strList = new List<string>();
                 
                 for (int i = 0; i < val.Length; i++)
                 {
-                    strList.AddRange(val[i].Split('\n'));
-                    //sum += int.Parse(val[i]);
-                    //Console.WriteLine("SUM: " + sum);
+                    // loop through the string[]
+                    strList.AddRange(val[i].Split('\n'));// split numbers with \n as delimiter
+                    
                 }
+                //loop through List to add the numbers in string
+                /*
                 foreach(string num in strList)
                 {
                     sum += Int32.Parse(num);
+                }*/
+
+                //address negative numbers in the input string
+                foreach(string num in strList)
+                {
+                    if(Int32.Parse(num) < 0)
+                    {
+                        negativeNumberFound = true;
+                        negativeValue += numbers;
+                        Console.WriteLine(negativeValue);
+                    }
+                    Console.WriteLine("num: "+ num);
+                    sum += Int32.Parse(num);
                 }
+
+                if (negativeNumberFound)
+                {
+                    throw new System.ArgumentException("negatives not allowed");
+                }
+                
             }
             return sum;           
 

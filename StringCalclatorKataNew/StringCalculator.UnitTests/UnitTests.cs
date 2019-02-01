@@ -75,5 +75,13 @@ namespace StringCalculatorUnitTests
             Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void InputStringWithNegativeNnumberShouldThrowException()
+        {
+            var input = "11, -11, 0";
+            Assert.Throws<System.ArgumentException>(() => StringCalculator.Add(input));
+        }
+
     }
 }
