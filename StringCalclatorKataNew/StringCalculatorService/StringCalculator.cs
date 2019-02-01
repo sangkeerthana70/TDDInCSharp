@@ -14,7 +14,7 @@ namespace StringCalculatorService
             int sum = 0;
             char delimiter = ',';
             bool negativeNumberFound = false;
-            string negativeValue = "";
+            //string negativeValue = "";
 
             if (numbers == "")
             {
@@ -62,8 +62,6 @@ namespace StringCalculatorService
                     if(Int32.Parse(num) < 0)
                     {
                         negativeNumberFound = true;
-                        negativeValue += numbers;
-                        Console.WriteLine(negativeValue);
                     }
                     Console.WriteLine("num: "+ num);
                     sum += Int32.Parse(num);
