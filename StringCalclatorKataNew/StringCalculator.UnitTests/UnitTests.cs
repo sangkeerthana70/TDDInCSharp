@@ -57,17 +57,23 @@ namespace StringCalculatorUnitTests
         }
 
         [Test]
-        public void InputShouldAllowNewLineAsDelimiterWithCommasToReturnSum()
+        public void InputShouldAllowNewLineAsDelimiterInsteadOfCommasToReturnSum()
         {
             var input = "1\n2,3";
             var expected = 6;
             var actual = StringCalculator.Add(input);
             Console.WriteLine(actual);
             Assert.AreEqual(expected, actual);
+        }
 
-
-
-
+        [Test]
+        public void InputShouldSupportDifferentDelimiters()
+        {
+            var input = "//;\n1;2";
+            var expected = 3;
+            var actual = StringCalculator.Add(input);
+            Console.WriteLine(actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
