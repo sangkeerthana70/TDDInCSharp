@@ -44,16 +44,7 @@ namespace StringCalculatorService
                 }
             }
 
-            //if((numbers.Length > 1) || (numbers.Contains('\n')) || (numbers.Contains(',')))
-            //{
-            //    Console.WriteLine("In Regex");
-            //    //string[] newVal = numbers.Split('\n', ',');
-            //    string delimiter = @",\n";
-            //    foreach (Match m in Regex.Matches(numbers, delimiter))
-            //    {
-            //        Console.WriteLine("m.Groups[1].Value: " + m.Groups[1].Value);
-            //    }
-            //}
+           
 
 
             return sum;
