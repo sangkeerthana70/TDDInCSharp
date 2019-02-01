@@ -37,7 +37,7 @@ namespace StringCalculator.UnitTests
             // split numbers string and add to a list
             var strArr = numbers.Split(delimiter);
             List<string> strList = new List<string>();
-			[1,2\n3]
+			//[1,2\n3]
 
             for (int i = 0; i < strArr.Length; i++)
             {
