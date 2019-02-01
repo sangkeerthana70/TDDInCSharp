@@ -62,9 +62,9 @@ namespace TrainTicketPricerServices
                 ticketPrice = numOfStops * 4;
             }
 
-            Console.WriteLine("1. " + (numOfStops == 7));
-            Console.WriteLine("2. " + (_holidayChecker.IsHoliday(d)));
-            Console.WriteLine("3. " +( _passengerType.CalculatePassengerType(age)));
+            //Console.WriteLine("1. " + (numOfStops == 7));
+            //Console.WriteLine("2. " + (_holidayChecker.IsHoliday(d)));
+            //Console.WriteLine("3. " +( _passengerType.CalculatePassengerType(age)));
 
             if ((numOfStops == 7) && ((_holidayChecker.IsHoliday(d))) && (_passengerType.CalculatePassengerType(age) == "Senior"))
             {
@@ -74,6 +74,16 @@ namespace TrainTicketPricerServices
                 ticketPrice = Convert.ToInt32((price * (float.Parse("0.8"))));// convert float value of 0.8 to an int
               
                 Console.WriteLine("ticketprice : " + ticketPrice);
+            }
+            Console.WriteLine("1. " + (numOfStops == 4));
+            Console.WriteLine("2. " + !(_holidayChecker.IsHoliday(d)));
+            Console.WriteLine("3. " + (_passengerType.CalculatePassengerType(age) == "Child"));
+
+            if ((numOfStops == 4) && ((!(_holidayChecker.IsHoliday(d)))) && (_passengerType.CalculatePassengerType(age) == "Child"))
+            {
+                Console.WriteLine("In child pricing" );
+                ticketPrice = numOfStops * 3;
+
             }
 
             return ticketPrice;    
