@@ -33,5 +33,27 @@ namespace FizzBuzz.UnitTests
             Assert.AreEqual(expected, actual);
 
         }
+
+        [Test]
+        public void IfInputIsDivisibleBy5ReturnBuzz()
+        {
+            var input = 10;
+            var expected = "Buzz";
+            var actual = FizzBuzzer.FizzOrBuzz(input);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [Test]
+        public void IfInputIsNotDivisibleBy5ReturnTheNumber()
+        {
+            var input = 11;
+            var expected = "11";
+            var actual = FizzBuzzer.FizzOrBuzz(input);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
