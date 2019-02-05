@@ -23,6 +23,15 @@ namespace FizzBuzz.UnitTests
 
         }
 
-        
+        [Test]
+        public void IfInputIsDivisibleBy3ReturnFizz()
+        {
+            var input = 9;
+            var expected = "Fizz";
+            var actual = FizzBuzzer.FizzOrBuzz(input);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
