@@ -55,5 +55,16 @@ namespace FizzBuzz.UnitTests
             Assert.AreEqual(expected, actual);
 
         }
+
+        [Test]
+        public void IfInputIsDivisibleBy3And5ReturnFizzBuzz()
+        {
+            var input = 15;
+            var expected = "FizzBuzz";
+            var actual = FizzBuzzer.FizzOrBuzz(input);
+            Console.WriteLine("actual: " + actual);
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
